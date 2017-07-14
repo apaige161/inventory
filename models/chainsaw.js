@@ -6,11 +6,12 @@ let Schema = mongoose.Schema;
 
 const sawSchema = new Schema({
     saw_model: String,
-    saw_serial: Number
+    saw_serial: Number,
+    date: { type: Date, default: Date.now }
 });
 
-const sawData = mongoose.model('sawData', sawSchema);
+const chainsaw = mongoose.model('chainsaw', sawSchema);
 
-module.exports = sawData
+module.exports = chainsaw
 
 
