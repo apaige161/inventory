@@ -1,3 +1,9 @@
+/*instructions to start*/
+    //npm install
+    //run mongo
+    //run nodemon
+
+
 //created a new collection called "saws" in our db and a database called chainsaws
 
 //was getting a deprication error, had to use mongo version 4.10.xx, seems to work for now
@@ -30,13 +36,15 @@ app.use(function(req, res, next){
 })
 
 /******** routes ****************/
-//first GET
+//GET root
 app.get('/', function(req, res){
     res.json({ message: 'You did it!' });
 });
 
 //GET sawData
     //everything worked until this point here
+    //not getting a response from 'localhost:3000/api/sawData' on postman
+        //mongo is running within the saws DB
 app.get('/api/sawData', function(){
     console.log('get saw data');
     sawData.find({}).then(function(eachOne){
