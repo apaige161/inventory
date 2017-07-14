@@ -14,7 +14,7 @@ const chainsaw = require('./models/chainsaw');
 
 /******** database **************/
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/saws');
+mongoose.connect('mongodb://localhost:27017/saws');
 //or mongoose.connect('mongodb://localhost:27017/saws');
 
 /******** middleware ************/
@@ -37,9 +37,11 @@ app.get('/', function(req, res){
 
 //GET sawData
     //everything worked until this point here
-app.get('/sawData', function(){
+app.get('/api/sawData', function(){
     console.log('get saw data');
-    sawData.find({})
+    sawData.find({}).then(function(eachOne){
+        res.json(eachOne);
+    });
 })
 
 //POST sawData

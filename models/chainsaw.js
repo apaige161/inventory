@@ -11,4 +11,6 @@ const sawSchema = new Schema({
 
 const sawData = mongoose.model('sawData', sawSchema);
 
+module.exports = sawData
+
 
