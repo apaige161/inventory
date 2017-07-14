@@ -48,6 +48,7 @@ app.get('/chainsaw', function(req, res){
 })
 
 //GET saw data by ID
+    //not exactly working right... last on my priorties
 app.get('/chainsaw/:chainsaw_id', function(req, res){
     chainsaw.findById(req.params.chainsaw_id).exec().then(function(chainsaw){
         res.json(chainsaw);
